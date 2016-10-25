@@ -1,21 +1,21 @@
 {
-  "name": "quran-mp3",
+  "name": "quran-recitors",
   "version": "0.0.1",
   "description": "A Node.js module to get Quran recitors from mp3quran.net",
   "files":[
-    "Mp3Quran.js"
+    "QuranRecitors.js"
   ],
   "scripts": {
-    "lint":"standard-format -w Mp3Quran.js",
-    "prepublish":"standard-format -w Mp3Quran.js"
+    "lint":"standard-format -w QuranRecitors.js",
+    "prepublish":"standard-format -w QuranRecitors.js"
   },
   "author": "ismnoiet<ismnoiet@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ismnoiet/quran-mp3"
+    "url": "git://github.com/ismnoiet/quran-recitors"
   },
   "bugs": {
-    "url": "git://github.com/ismnoiet/quran-mp3/issues"
+    "url": "git://github.com/ismnoiet/quran-recitors/issues"
   },
   "license": "MIT",
   "dependencies": {

@@ -5,28 +5,28 @@ var EventEmitter = require('events'),
   jsdom = require('jsdom'),
   fs = require('fs')
 
-function Mp3Quran () {
+function QuranRecitors () {
   EventEmitter.call(this)
   this.baseUrl = 'http://www.mp3quran.net/eng/'
   this.recitors = []
   // kick things off.
   this.init()
 }
-util.inherits(Mp3Quran, EventEmitter)
+util.inherits(QuranRecitors, EventEmitter)
 
-Mp3Quran.prototype.getRecitors = function () {
+QuranRecitors.prototype.getRecitors = function () {
   return this.recitors
 }
-Mp3Quran.prototype.add = function (recitor) {
+QuranRecitors.prototype.add = function (recitor) {
   this.recitors.push(recitor)
   this.emit('recitor-added', {recitor: recitor})
 }
 
-Mp3Quran.prototype.ready = function () {
+QuranRecitors.prototype.ready = function () {
   this.emit('ready', this.recitors)
 }
 
-Mp3Quran.prototype.save = function (destinationFile) {
+QuranRecitors.prototype.save = function (destinationFile) {
   destinationFile = (destinationFile) ? destinationFile : './resources/recitors.json'
   var that = this
   fs.writeFile(destinationFile, JSON.stringify(that.recitors, null, 4), function (err) {
@@ -36,7 +36,7 @@ Mp3Quran.prototype.save = function (destinationFile) {
 
 }
 
-Mp3Quran.prototype.init = function () {
+QuranRecitors.prototype.init = function () {
   var that = this
   jsdom.env(
     that.baseUrl,
@@ -59,4 +59,4 @@ Mp3Quran.prototype.init = function () {
   return this
 }
 
-module.exports = Mp3Quran
+module.exports = QuranRecitors
