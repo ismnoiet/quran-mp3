@@ -56,8 +56,10 @@ QuranRecitors.prototype.init = function () {
         // NOTE: use .textContent instead of .innerText in order to work!!!
         that.add({ name: recitorsDOM[i].textContent, url: recitorsDOM[i].href })
       }
-      that.save()
+      
       that.ready()
+      // you can save recitors list if you want.
+      //that.save()
     }
   )
   return this
