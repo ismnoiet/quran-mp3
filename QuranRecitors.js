@@ -30,8 +30,12 @@ QuranRecitors.prototype.save = function (destinationFile) {
   destinationFile = (destinationFile) ? destinationFile : './resources/recitors.json'
   var that = this
   fs.writeFile(destinationFile, JSON.stringify(that.recitors, null, 4), function (err) {
-    if (err) {console.log("Can't save recitor list to ", destinationFile)}
-    that.emit('recitors-saved', {destination: destinationFile})
+    if (err) {
+      console.log("Can't save recitor list to ", destinationFile)
+    } else {
+      that.emit('recitors-saved', {destination: destinationFile})
+    }
+
   })
 
 }
